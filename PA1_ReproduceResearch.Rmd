@@ -2,7 +2,7 @@
 title: 'Coursera Project : Reproducible- Research'
 author: "Vinay Bihani"
 date: "April 28, 2016"
-output: html_document
+output: md_document
 ---
 ##Reading the dataset 
 
@@ -42,7 +42,7 @@ avgsteps <- aggregate(steps~interval, data = smpdata, na.rm=TRUE, mean)
 plot(avgsteps$interval, avgsteps$steps, type="l", xlab="Interval", ylab = "Steps", main="Average steps in 5 minutes interval")
 
 maxstpintv <- avgsteps[avgsteps$steps==max(avgsteps$steps),]
-#print(paste("The 5 minute interval with max steps is -", maxstpintv))
+print(paste("The 5 minute interval with max steps is -", maxstpintv))
 
 ```
 
