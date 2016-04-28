@@ -2,7 +2,7 @@
 title: 'Coursera Project : Reproducible- Research'
 author: "Vinay Bihani"
 date: "April 28, 2016"
-output: md_document
+output: html_document
 ---
 ##Reading the dataset 
 
@@ -47,6 +47,8 @@ print(paste("The 5 minute interval with max steps is -", maxstpintv))
 ```
 
 ##Total missing values in data set, mean and median after imputation of missing values
+
+## Imputation - For imputation of missing values, taken average of steps for each day and replaced with missing value. Replaced first day missing value with 0 since all are missing.
 ```{r}
 print(paste("Total missing values - ",sum(is.na(smpdata$steps))))
 

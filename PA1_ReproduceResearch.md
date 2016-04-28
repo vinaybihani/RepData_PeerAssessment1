@@ -48,6 +48,9 @@ Time series plot for steps at 5 minute interval and interval in which maximum st
 Total missing values in data set, mean and median after imputation of missing values
 ------------------------------------------------------------------------------------
 
+Imputation - For imputation of missing values, taken average of steps for each day and replaced with missing value. Replaced first day missing value with 0 since all are missing.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     print(paste("Total missing values - ",sum(is.na(smpdata$steps))))
 
     ## [1] "Total missing values -  2304"

@@ -153,6 +153,9 @@ print(paste(&quot;The 5 minute interval with max steps is -&quot;, maxstpintv))<
 </div>
 <div id="total-missing-values-in-data-set-mean-and-median-after-imputation-of-missing-values" class="section level2">
 <h2>Total missing values in data set, mean and median after imputation of missing values</h2>
+</div>
+<div id="imputation---for-imputation-of-missing-values-taken-average-of-steps-for-each-day-and-replaced-with-missing-value.-replaced-first-day-missing-value-with-0-since-all-are-missing." class="section level2">
+<h2>Imputation - For imputation of missing values, taken average of steps for each day and replaced with missing value. Replaced first day missing value with 0 since all are missing.</h2>
 <pre class="r"><code>print(paste(&quot;Total missing values - &quot;,sum(is.na(smpdata$steps))))</code></pre>
 <pre><code>## [1] &quot;Total missing values -  2304&quot;</code></pre>
 <pre class="r"><code>avgdatestp &lt;- aggregate(steps ~ date, data= smpdata, na.rm=TRUE, mean)
