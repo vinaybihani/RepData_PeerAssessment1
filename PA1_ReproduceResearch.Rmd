@@ -2,7 +2,7 @@
 title: 'Coursera Project : Reproducible- Research'
 author: "Vinay Bihani"
 date: "April 28, 2016"
-output: html_document
+output: md_document
 ---
 ##Reading the dataset 
 
