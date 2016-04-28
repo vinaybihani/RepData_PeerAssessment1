@@ -3,12 +3,14 @@ title: "Coursera Project - Reproducible-research"
 output: html_document
 ---
 
-Reading the dataset 
+##Reading the dataset 
 
 ```{r}
-#knitr::opts_chunk$set(echo = TRUE)
-
+knitr::opts_chunk$set(echo = TRUE)
 suppressWarnings(library(lattice))
+```
+
+```{r}
 
 if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
        temp <- tempfile()
@@ -20,7 +22,7 @@ smpdata <- read.csv("activity.csv")
 
 ```
 
-Count number of steps each day, draw histogram, calculate mean and median
+##Count number of steps each day, draw histogram, calculate mean and median
 ```{r}
 perdaysteps <- aggregate(steps~date, data = smpdata, na.rm=TRUE, sum)
 
@@ -33,7 +35,7 @@ smpmedian <- median(smpdata$steps, na.rm = TRUE)
 print(paste("The median of step each day- ", smpmedian))
 ```
 
-Time series plot for steps at 5 minute interval and interval in which maximum steps taken.
+##Time series plot for steps at 5 minute interval and interval in which maximum steps taken.
 ```{r}
 avgsteps <- aggregate(steps~interval, data = smpdata, na.rm=TRUE, mean)
 plot(avgsteps$interval, avgsteps$steps, type="l", xlab="Interval", ylab = "Steps", main="Average steps in 5 minutes interval")
@@ -43,7 +45,7 @@ maxstpintv <- avgsteps[avgsteps$steps==max(avgsteps$steps),]
 
 ```
 
-Total missing values in data set
+##Total missing values in data set, mean and median after imputation of missing values
 ```{r}
 print(paste("Total missing values - ",sum(is.na(smpdata$steps))))
 
@@ -63,7 +65,10 @@ smpmedian <- median(smpdata$steps, na.rm = TRUE)
 print(paste("The median of step each day- ", smpmedian))
 
 ```
-The mean of the imputed data has reduced as compared to the data with NA's. But the median is same. 
+
+The mean of the imputed data has reduced as compared to the data with NA's. But the median is same as 0. 
+
+##The average number of steps taken, averaged across all weekday days or weekend days 
 
 ```{r}
 smpdata$Day <- weekdays(as.Date(smpdata$date))
