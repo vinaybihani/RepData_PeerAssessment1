@@ -1,8 +1,9 @@
 ---
-title: "Coursera Project - Reproducible-research"
+title: 'Coursera Project : Reproducible- Research'
+author: "Vinay Bihani"
+date: "April 28, 2016"
 output: html_document
 ---
-
 ##Reading the dataset 
 
 ```{r}
